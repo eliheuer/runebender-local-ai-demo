@@ -5,7 +5,7 @@
 #   out-dir  where the model is written   default: ../models/shapes-draw
 #   steps    optimizer steps              default: 6000
 #
-# About five minutes on an Apple M-series laptop or a desktop GPU.
+# About ten minutes on an Apple M-series laptop or a desktop GPU.
 # Fewer steps give a rougher model; more steps give a cleaner one.
 set -eu
 

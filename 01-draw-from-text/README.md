@@ -5,7 +5,7 @@ circle 64 units wide in the lower left" in the editor and the model
 draws it into the open glyph. The model knows only the shapes in the
 UFO and the words for them. Nothing is downloaded.
 
-Time: about ten minutes, five of them training.
+Time: about fifteen minutes, ten of them training.
 
 ## 1. Look at the data
 
@@ -33,7 +33,10 @@ Open `vocab.txt` to see every word the model can read. The training
 run prints a validation loss every 500 steps; lower is better, and the
 checkpoint with the lowest value is the one kept.
 
-TODO: time and loss from the final run.
+On an M4 Pro laptop the default run of 6000 steps takes about 11
+minutes and ends with a validation loss near 2.2. The checked-in
+`models/shapes-draw` was trained longer, 15000 steps, and draws
+cleaner shapes; use it if you want to skip the wait.
 
 ## 3. Draw in the editor
 
