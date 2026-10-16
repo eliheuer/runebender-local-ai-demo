@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="chevron.620" format="2">
+	<advance width="740"/>
+	<outline>
+		<contour>
+			<point x="246" y="0" type="line"/>
+			<point x="556" y="310" type="line"/>
+			<point x="246" y="620" type="line"/>
+			<point x="122" y="496" type="line"/>
+			<point x="382" y="310" type="line"/>
+			<point x="122" y="124" type="line"/>
+		</contour>
+	</outline>
+</glyph>

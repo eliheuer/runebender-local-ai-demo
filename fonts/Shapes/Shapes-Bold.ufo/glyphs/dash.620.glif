@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="dash.620" format="2">
+	<advance width="860"/>
+	<outline>
+		<contour>
+			<point x="60" y="223" type="line"/>
+			<point x="800" y="223" type="line"/>
+			<point x="800" y="517" type="line"/>
+			<point x="60" y="517" type="line"/>
+		</contour>
+	</outline>
+</glyph>

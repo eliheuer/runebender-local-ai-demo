@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="star.300" format="2">
+	<advance width="540"/>
+	<outline>
+		<contour>
+			<point x="270" y="420" type="line"/>
+			<point x="249" y="239" type="line"/>
+			<point x="70" y="275" type="line"/>
+			<point x="236" y="199" type="line"/>
+			<point x="147" y="40" type="line"/>
+			<point x="270" y="174" type="line"/>
+			<point x="393" y="40" type="line"/>
+			<point x="304" y="199" type="line"/>
+			<point x="470" y="275" type="line"/>
+			<point x="291" y="239" type="line"/>
+		</contour>
+	</outline>
+</glyph>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="plus.300" format="2">
+	<advance width="420"/>
+	<outline>
+		<contour>
+			<point x="252" y="108" type="line"/>
+			<point x="360" y="108" type="line"/>
+			<point x="360" y="192" type="line"/>
+			<point x="252" y="192" type="line"/>
+			<point x="252" y="300" type="line"/>
+			<point x="168" y="300" type="line"/>
+			<point x="168" y="192" type="line"/>
+			<point x="60" y="192" type="line"/>
+			<point x="60" y="108" type="line"/>
+			<point x="168" y="108" type="line"/>
+			<point x="168" y="0" type="line"/>
+			<point x="252" y="0" type="line"/>
+		</contour>
+	</outline>
+</glyph>

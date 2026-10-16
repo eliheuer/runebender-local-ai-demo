@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="hexagon.660" format="2">
+	<advance width="900"/>
+	<outline>
+		<contour>
+			<point x="849" y="390" type="line"/>
+			<point x="650" y="736" type="line"/>
+			<point x="250" y="736" type="line"/>
+			<point x="51" y="390" type="line"/>
+			<point x="250" y="44" type="line"/>
+			<point x="650" y="44" type="line"/>
+		</contour>
+	</outline>
+</glyph>

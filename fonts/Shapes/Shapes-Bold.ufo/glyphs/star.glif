@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="star" format="2">
+	<unicode hex="2605"/>
+	<advance width="800"/>
+	<outline>
+		<contour>
+			<point x="400" y="680" type="line"/>
+			<point x="345" y="415" type="line"/>
+			<point x="77" y="445" type="line"/>
+			<point x="311" y="311" type="line"/>
+			<point x="200" y="65" type="line"/>
+			<point x="400" y="247" type="line"/>
+			<point x="600" y="65" type="line"/>
+			<point x="489" y="311" type="line"/>
+			<point x="723" y="445" type="line"/>
+			<point x="455" y="415" type="line"/>
+		</contour>
+	</outline>
+</glyph>

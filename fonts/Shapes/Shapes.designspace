@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<designspace format="5.0">
+  <axes>
+    <axis tag="wght" name="Weight" minimum="400" maximum="700" default="400"/>
+  </axes>
+  <sources>
+    <source filename="Shapes-Regular.ufo" name="Shapes Regular" familyname="Shapes" stylename="Regular">
+      <location><dimension name="Weight" xvalue="400"/></location>
+    </source>
+    <source filename="Shapes-Bold.ufo" name="Shapes Bold" familyname="Shapes" stylename="Bold">
+      <location><dimension name="Weight" xvalue="700"/></location>
+    </source>
+  </sources>
+</designspace>

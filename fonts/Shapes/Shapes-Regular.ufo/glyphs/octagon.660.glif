@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="octagon.660" format="2">
+	<advance width="780"/>
+	<outline>
+		<contour>
+			<point x="695" y="456" type="line"/>
+			<point x="516" y="635" type="line"/>
+			<point x="264" y="635" type="line"/>
+			<point x="85" y="456" type="line"/>
+			<point x="85" y="204" type="line"/>
+			<point x="264" y="25" type="line"/>
+			<point x="516" y="25" type="line"/>
+			<point x="695" y="204" type="line"/>
+		</contour>
+	</outline>
+</glyph>

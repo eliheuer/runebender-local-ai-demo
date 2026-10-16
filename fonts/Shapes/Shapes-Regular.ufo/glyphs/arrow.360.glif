@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="arrow.360" format="2">
+	<advance width="480"/>
+	<outline>
+		<contour>
+			<point x="60" y="137" type="line"/>
+			<point x="258" y="137" type="line"/>
+			<point x="258" y="72" type="line"/>
+			<point x="420" y="180" type="line"/>
+			<point x="258" y="288" type="line"/>
+			<point x="258" y="223" type="line"/>
+			<point x="60" y="223" type="line"/>
+		</contour>
+	</outline>
+</glyph>

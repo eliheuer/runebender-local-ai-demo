@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "nodes": [
+    { "id": 1, "type": "core.source", "pos": [32, 96] },
+    { "id": 2, "type": "core.master", "pos": [32, 224], "values": { "name": "Bold" } },
+    { "id": 3, "type": "font-ml.train", "pos": [320, 96],
+      "values": { "out": "shapes-bolden-nodes", "steps": 1200.0, "dims": 128.0, "layers": 4.0, "heads": 4.0, "batch": 16.0, "colors": "any", "recenter": true } },
+    { "id": 4, "type": "font-ml.bolden", "pos": [640, 96], "values": { "strength": 1.0 } },
+    { "id": 5, "type": "core.compare", "pos": [928, 96] },
+    { "id": 6, "type": "core.note", "pos": [320, 320],
+      "values": { "text": "Train on Regular and Bold, then bolden every Regular glyph with the new model and compare against Bold where it is drawn." } }
+  ],
+  "links": [
+    [1, "source", 3, "source"],
+    [2, "source", 3, "target"],
+    [3, "model", 4, "model"],
+    [1, "source", 4, "source"],
+    [1, "glyphs", 4, "glyphs"],
+    [4, "layer", 5, "layer"],
+    [2, "source", 5, "against"]
+  ]
+}

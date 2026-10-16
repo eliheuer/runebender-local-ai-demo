@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="star.700" format="2">
+	<advance width="940"/>
+	<outline>
+		<contour>
+			<point x="470" y="820" type="line"/>
+			<point x="397" y="510" type="line"/>
+			<point x="80" y="537" type="line"/>
+			<point x="352" y="372" type="line"/>
+			<point x="229" y="78" type="line"/>
+			<point x="470" y="286" type="line"/>
+			<point x="711" y="78" type="line"/>
+			<point x="588" y="372" type="line"/>
+			<point x="860" y="537" type="line"/>
+			<point x="543" y="510" type="line"/>
+		</contour>
+	</outline>
+</glyph>

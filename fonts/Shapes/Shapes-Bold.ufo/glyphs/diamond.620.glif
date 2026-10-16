@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="diamond.620" format="2">
+	<advance width="860"/>
+	<outline>
+		<contour>
+			<point x="430" y="765" type="line"/>
+			<point x="35" y="370" type="line"/>
+			<point x="430" y="-25" type="line"/>
+			<point x="825" y="370" type="line"/>
+		</contour>
+	</outline>
+</glyph>

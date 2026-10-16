@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="triangle.300" format="2">
+	<advance width="420"/>
+	<outline>
+		<contour>
+			<point x="210" y="300" type="line"/>
+			<point x="80" y="75" type="line"/>
+			<point x="340" y="75" type="line"/>
+		</contour>
+	</outline>
+</glyph>

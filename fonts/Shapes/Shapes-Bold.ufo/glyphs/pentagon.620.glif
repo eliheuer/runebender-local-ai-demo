@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<glyph name="pentagon.620" format="2">
+	<advance width="860"/>
+	<outline>
+		<contour>
+			<point x="430" y="754" type="line"/>
+			<point x="65" y="489" type="line"/>
+			<point x="204" y="59" type="line"/>
+			<point x="656" y="59" type="line"/>
+			<point x="795" y="489" type="line"/>
+		</contour>
+	</outline>
+</glyph>

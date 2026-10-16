@@ -1,0 +1,10 @@
+[package]
+name = "make-shapes"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0 OR MIT"
+description = "Writes the Shapes demo family: two point-compatible UFO masters and a designspace."
+publish = false
+
+[dependencies]
+norad = "0.18"
