@@ -34,9 +34,11 @@ run prints a validation loss every 500 steps; lower is better, and the
 checkpoint with the lowest value is the one kept.
 
 On an M4 Pro laptop the default run of 6000 steps takes about 11
-minutes and ends with a validation loss near 2.2. The checked-in
-`models/shapes-draw` was trained longer, 15000 steps, and draws
-cleaner shapes; use it if you want to skip the wait.
+minutes and ends with a validation loss near 2.2. Shapes from that
+model are recognizable and rough. The checked-in `models/shapes-draw`
+was trained for 15000 steps, 27 minutes, to a loss of 0.49, and its
+shapes are clean. Use it if you want to skip the wait, or train longer
+yourself with `./train.sh models/shapes-draw 15000`.
 
 ## 3. Draw in the editor
 
