@@ -22,7 +22,7 @@ runebender proof fonts/Shapes/Shapes-Regular.ufo --out shapes.svg
 ## 2. Train
 
 ```sh
-./01-train-and-bolden/train.sh
+./02-train-and-bolden/train.sh
 ```
 
 The script runs one `font-ml run train` command: Regular is the

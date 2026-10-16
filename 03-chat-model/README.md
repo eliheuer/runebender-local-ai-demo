@@ -10,7 +10,7 @@ Time: five minutes plus the download.
 ## 1. Get the model
 
 ```sh
-./02-chat-model/get-model.sh
+./03-chat-model/get-model.sh
 ```
 
 This fetches Qwen3-0.6B as a GGUF file, plus its tokenizer, from
@@ -56,8 +56,8 @@ asked how many glyphs the font has, it read a result that said 48 and
 answered 8. Expect that. The larger sizes do better:
 
 ```sh
-./02-chat-model/get-model.sh 1.7b    # 1.3 GB
-./02-chat-model/get-model.sh 4b      # 2.5 GB, what the Chat panel was built with
+./03-chat-model/get-model.sh 1.7b    # 1.3 GB
+./03-chat-model/get-model.sh 4b      # 2.5 GB, what the Chat panel was built with
 ```
 
 The 4B model needs about 4 GB of memory to run and is the one to use
@@ -69,6 +69,6 @@ layout, the same tools, the same editor.
 Chat models are the one kind of model in this repo that you download
 rather than train. They are general models; nothing about them knows
 fonts. What they know about your font, they read through the tools at
-run time. Outline models, the kind demo 01 trains, are specific to
+run time. Outline models, the kind demo 02 trains, are specific to
 font sources, and today there are none on Hugging Face that fit
 Runebender's format. You train those yourself.

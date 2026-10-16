@@ -13,7 +13,7 @@ models are small on purpose. Build on them later.
 - A mid-range computer: an Apple Silicon laptop, or a Linux PC with a
   gaming GPU, or a plain CPU with patience. Not a datacenter.
 - Rust stable, from [rustup.rs](https://rustup.rs).
-- About 1 GB of disk for the chat model in demo 02; 3 GB for the larger one.
+- About 1 GB of disk for the chat model in demo 03; 3 GB for the larger one.
 
 ## Install
 
@@ -33,17 +33,18 @@ runebender --help
 font-ml tasks
 ```
 
-`font-ml tasks` lists what the models can do. `bolden` and `train` are
-the two this repo uses.
+`font-ml tasks` lists what the models can do. This repo uses `draw`,
+`train-draw`, `bolden`, and `train`.
 
 ## The demos
 
 | | What you do | What you learn |
 | --- | --- | --- |
-| [01-train-and-bolden](01-train-and-bolden/) | Train a model on the Shapes font, then bolden a new shape in the editor | A model is a folder you make from your own drawings |
-| [02-chat-model](02-chat-model/) | Download a small open chat model and ask it about the font | A model from Hugging Face plugs into the same folder |
-| [03-nodes](03-nodes/) | The same train and bolden steps as a graph in the Nodes tab | Workflows are files you can share and rerun |
-| [04-real-font](04-real-font/) | The bolden loop on a real typeface, Virtua Grotesk | What works and what does not on real drawings |
+| [01-draw-from-text](01-draw-from-text/) | Train a model on the Shapes font, then type "a circle 64 units wide" in the editor | A model is a folder you make from your own drawings, and it only knows what you drew |
+| [02-train-and-bolden](02-train-and-bolden/) | Train a model on the Shapes font, then bolden a new shape in the editor | A model that moves points keeps a family interpolating |
+| [03-chat-model](03-chat-model/) | Download a small open chat model and ask it about the font | A model from Hugging Face plugs into the same folder |
+| [04-nodes](04-nodes/) | The same train and bolden steps as a graph in the Nodes tab | Workflows are files you can share and rerun |
+| [05-real-font](05-real-font/) | The bolden loop on a real typeface, Virtua Grotesk | What works and what does not on real drawings |
 
 Do them in order. 01 is the one to do if you do only one.
 
@@ -51,8 +52,9 @@ Do them in order. 01 is the one to do if you do only one.
 
 Every model is a directory. Trained and downloaded models go in
 `models/` here, which git ignores, except `models/shapes-bolden`, a
-trained copy of the demo 01 model that is checked in so the editor
-demos work even if your training run fails. See
+trained copy of the demo 02 model, and `models/shapes-draw`, the demo
+01 model, both checked in so the editor demos work even if your
+training run fails. See
 [models/MODELS.md](models/MODELS.md).
 
 The editor looks for models in `~/.runebender/models`. To point it at
@@ -68,8 +70,9 @@ RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
   written by `tools/make-shapes`. Every glyph has the same points in
   both masters, which is what a bolden model trains on. Two shapes,
   octagon and chevron, exist in Regular only. Those are the ones you
-  bolden with the model you train.
-- `fonts/VirtuaGrotesk`: Regular and Bold of a real typeface, for demo 04.
+  bolden with the model you train. Demo 01 trains on the Regular
+  master alone.
+- `fonts/VirtuaGrotesk`: Regular and Bold of a real typeface, for demo 05.
 
 To regenerate Shapes after changing the generator:
 

@@ -10,7 +10,7 @@
 set -eu
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-OUT=${1:-$ROOT/models/shapes-bolden}
+OUT=${1:-$RO../models/shapes-bolden}
 STEPS=${2:-1200}
 FONTS=$ROOT/fonts/Shapes
 

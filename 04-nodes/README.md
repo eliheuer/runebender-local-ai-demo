@@ -1,6 +1,6 @@
 # 03: The same steps as a node graph
 
-Demo 01 as a workflow file: boxes and wires that the editor draws in
+Demo 02 as a workflow file: boxes and wires that the editor draws in
 its Nodes tab and that run from the shell. A workflow is a file you
 can share, and it runs the same way for everyone.
 
@@ -12,6 +12,7 @@ Time: five minutes, including a training run.
 | --- | --- |
 | `shapes-train.nodes.json` | Font and Bold master into Train; the new model into Bolden over every glyph; Compare against Bold |
 | `shapes-bolden.nodes.json` | The checked-in `shapes-bolden` model into Bolden; Compare; Install |
+| `shapes-draw.nodes.json` | The `shapes-draw` model and a sentence into Draw; Proof the proposal to an SVG |
 
 Node types come from `font-ml tasks`. The editor carries no task
 names of its own, so a new task in `font-ml` is a new node with no
@@ -20,8 +21,8 @@ editor change.
 ## 1. Check and run from the shell
 
 ```sh
-runebender nodes check 03-nodes/shapes-train.nodes.json
-runebender nodes run 03-nodes/shapes-train.nodes.json \
+runebender nodes check 04-nodes/shapes-train.nodes.json
+runebender nodes run 04-nodes/shapes-train.nodes.json \
     --font fonts/Shapes/Shapes.designspace --models models --json
 ```
 
