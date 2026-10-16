@@ -9,17 +9,19 @@ Time: about fifteen minutes, ten of them training.
 
 ## 1. Look at the data
 
-`fonts/Shapes/Shapes-Regular.ufo` holds 16 shapes in 8 sizes each. The
-glyph name is the label: `circle`, `circle.300`, and `circle.700` all
-teach the word "circle". The trainer measures each drawing, so sizes do
-not matter; several sizes are several examples of one word.
+`fonts/Shapes.ufo` holds 16 glyphs, one shape each: circle, square,
+triangle, star, ring, arrow, and so on. The glyph name is the label:
+the glyph named `circle` teaches the word "circle". The trainer
+measures each drawing and resizes it, so the drawn size does not
+matter.
 
 ```sh
-runebender proof fonts/Shapes/Shapes-Regular.ufo --out shapes.svg
+runebender proof fonts/Shapes.ufo --out shapes.svg
 ```
 
 To train on your own shapes, draw them in any UFO and name the glyphs.
-A name with a hyphen is two words: `five-star`.
+A name with a hyphen is two words: `five-star`. A suffix after a dot
+is ignored, so `circle.big` is another example of "circle".
 
 ## 2. Train
 
@@ -33,17 +35,17 @@ Open `vocab.txt` to see every word the model can read. The training
 run prints a validation loss every 500 steps; lower is better, and the
 checkpoint with the lowest value is the one kept.
 
-On an M4 Pro laptop the default run of 6000 steps takes about 11
-minutes and ends with a validation loss near 2.2. Shapes from that
+On an M4 Pro laptop the default run of 6000 steps takes about 12
+minutes and ends with a validation loss near 1.3. Shapes from that
 model are recognizable and rough. The checked-in `models/shapes-draw`
-was trained for 15000 steps, 27 minutes, to a loss of 0.49, and its
+was trained for 15000 steps, 29 minutes, to a loss of 0.51, and its
 shapes are clean. Use it if you want to skip the wait, or train longer
 yourself with `./train.sh models/shapes-draw 15000`.
 
 ## 3. Draw in the editor
 
 ```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
+RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes.ufo
 ```
 
 1. In the left panel, open **Local AI**. Under **Model**, choose

@@ -12,7 +12,7 @@ Time: five minutes, including a training run.
 | --- | --- |
 | `shapes-train.nodes.json` | Font and Bold master into Train; the new model into Bolden over every glyph; Compare against Bold |
 | `shapes-bolden.nodes.json` | The checked-in `shapes-bolden` model into Bolden; Compare; Install |
-| `shapes-draw.nodes.json` | The `shapes-draw` model and a sentence into Draw; Proof the proposal to an SVG |
+| `shapes-draw.nodes.json` | The `shapes-draw` model and a sentence into Draw; Proof the proposal to an SVG. Run it against `fonts/Shapes.ufo` |
 
 Node types come from `font-ml tasks`. The editor carries no task
 names of its own, so a new task in `font-ml` is a new node with no
@@ -23,7 +23,7 @@ editor change.
 ```sh
 runebender nodes check 04-nodes/shapes-train.nodes.json
 runebender nodes run 04-nodes/shapes-train.nodes.json \
-    --font fonts/Shapes/Shapes.designspace --models models --json
+    --font fonts/ShapesFamily/Shapes.designspace --models models --json
 ```
 
 `check` reads the file and reports every problem. `run` executes each
@@ -34,7 +34,7 @@ last run, and prints one JSON report. The Train node writes
 ## 2. Open it in the editor
 
 ```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
+RUNEBENDER_MODELS=$PWD/models runebender fonts/ShapesFamily/Shapes.designspace
 ```
 
 In **Local AI**, under **Nodes**, the two files appear because they

@@ -12,7 +12,7 @@ set -eu
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 OUT=${1:-$RO../models/shapes-bolden}
 STEPS=${2:-1200}
-FONTS=$ROOT/fonts/Shapes
+FONTS=$ROOT/fonts/ShapesFamily
 
 font-ml run train \
     --source "$FONTS/Shapes-Regular.ufo" \

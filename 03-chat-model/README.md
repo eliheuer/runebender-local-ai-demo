@@ -30,7 +30,7 @@ service.
 ## 2. Talk to it from the shell
 
 ```sh
-font-ml chat --model models/qwen3-0.6b --font fonts/Shapes/Shapes.designspace \
+font-ml chat --model models/qwen3-0.6b --font fonts/ShapesFamily/Shapes.designspace \
     --prompt 'Use the tools to read this font. How many glyphs does it have?'
 ```
 
@@ -42,7 +42,7 @@ the model reading the font.
 ## 3. Talk to it in the editor
 
 ```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
+RUNEBENDER_MODELS=$PWD/models runebender fonts/ShapesFamily/Shapes.designspace
 ```
 
 Open the **Chat** tab in the left panel, pick `qwen3-0.6b`, and ask it

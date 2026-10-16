@@ -72,5 +72,5 @@ fetch "$TOK_URL" "$DIR/tokenizer.json" "$TOK_SHA"
 echo
 echo "Model ready in $DIR"
 echo "Try it:"
-echo "  font-ml chat --model $DIR --font $ROOT/fonts/Shapes/Shapes.designspace \\"
+echo "  font-ml chat --model $DIR --font $ROOT/fonts/ShapesFamily/Shapes.designspace \\"
 echo "      --prompt 'Use the tools to read this font. How many glyphs does it have?'"

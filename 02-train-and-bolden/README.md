@@ -9,14 +9,14 @@ Apple Silicon laptop or a desktop GPU, and longer on a CPU.
 
 ## 1. Look at the font
 
-`fonts/Shapes` has two masters. Regular has 128 glyphs, Bold has 112.
+`fonts/ShapesFamily` has two masters. Regular has 128 glyphs, Bold has 112.
 Every shape comes in eight sizes, and every glyph has the same points
 in the same order in both masters. Two shapes, octagon and chevron,
 are drawn in Regular only.
 
 ```sh
-runebender info fonts/Shapes/Shapes-Regular.ufo
-runebender proof fonts/Shapes/Shapes-Regular.ufo --out shapes.svg
+runebender info fonts/ShapesFamily/Shapes-Regular.ufo
+runebender proof fonts/ShapesFamily/Shapes-Regular.ufo --out shapes.svg
 ```
 
 ## 2. Train
@@ -48,7 +48,7 @@ do step 3.
 ## 3. Use it in the editor
 
 ```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
+RUNEBENDER_MODELS=$PWD/models runebender fonts/ShapesFamily/Shapes.designspace
 ```
 
 1. In the left panel, open **Local AI**. Under **Model**, choose
@@ -81,9 +81,9 @@ of editing the glyph:
 
 ```sh
 font-ml run bolden --model models/shapes-bolden \
-    --source fonts/Shapes/Shapes-Regular.ufo --glyph octagon --write
-runebender proposal list fonts/Shapes/Shapes-Regular.ufo
-runebender proof fonts/Shapes/Shapes-Regular.ufo \
+    --source fonts/ShapesFamily/Shapes-Regular.ufo --glyph octagon --write
+runebender proposal list fonts/ShapesFamily/Shapes-Regular.ufo
+runebender proof fonts/ShapesFamily/Shapes-Regular.ufo \
     --layer com.runebender.proposal.bolden --glyphs octagon --out octagon.svg
 ```
 

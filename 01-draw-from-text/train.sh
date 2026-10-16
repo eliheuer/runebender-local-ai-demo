@@ -14,10 +14,10 @@ OUT=${1:-$ROOT/models/shapes-draw}
 STEPS=${2:-6000}
 
 font-ml run train-draw \
-    --source "$ROOT/fonts/Shapes/Shapes-Regular.ufo" \
+    --source "$ROOT/fonts/Shapes.ufo" \
     --out "$OUT" \
     --steps "$STEPS" --dims 256 --layers 6 --heads 8 --batch 16
 
 echo
 echo "Model written to $OUT"
-echo "Open the editor:  RUNEBENDER_MODELS=$ROOT/models runebender $ROOT/fonts/Shapes/Shapes.designspace"
+echo "Open the editor:  RUNEBENDER_MODELS=$ROOT/models runebender $ROOT/fonts/Shapes.ufo"

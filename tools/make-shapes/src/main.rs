@@ -1,5 +1,6 @@
-//! Writes the Shapes family: `Shapes-Regular.ufo`, `Shapes-Bold.ufo`,
-//! and `Shapes.designspace`.
+//! Writes `Shapes.ufo`, one glyph per shape, and the Shapes family in
+//! `ShapesFamily/`: `Shapes-Regular.ufo`, `Shapes-Bold.ufo`, and
+//! `Shapes.designspace`.
 //!
 //! Every glyph is a simple geometric shape drawn by a formula that
 //! takes a size and a weight. Regular is weight 0; Bold is weight 60.
@@ -10,7 +11,7 @@
 //! Two shapes, octagon and chevron, are drawn in Regular only. They
 //! are what you bolden with the model you train.
 //!
-//! Usage: `cargo run --release -- <out-dir>`
+//! Usage: `cargo run --release -- <fonts-dir>`
 
 use norad::{Codepoints, Contour, ContourPoint, Font, Glyph, PointType};
 use std::f64::consts::PI;
@@ -329,13 +330,44 @@ const DESIGNSPACE: &str = r#"<?xml version='1.0' encoding='UTF-8'?>
 </designspace>
 "#;
 
+/// One master with every shape once, at the medium size: the hello
+/// world UFO. Sixteen glyphs, one word each.
+fn single() -> Font {
+    let mut font = Font::new();
+    let info = &mut font.font_info;
+    info.family_name = Some("Shapes".into());
+    info.style_name = Some("Regular".into());
+    info.units_per_em = Some(1000u32.into());
+    info.ascender = Some(800.0);
+    info.descender = Some(-200.0);
+    info.x_height = Some(500.0);
+    info.cap_height = Some(700.0);
+    info.version_major = Some(1);
+    let layer = font.layers.default_layer_mut();
+    for shape in SHAPES {
+        layer.insert_glyph(glyph(shape.name, Some(shape.codepoint), 560.0, 0.0, shape.draw));
+    }
+    font
+}
+
 fn main() {
     let out = std::env::args().nth(1).unwrap_or_else(|| {
-        eprintln!("usage: make-shapes <out-dir>");
+        eprintln!("usage: make-shapes <fonts-dir>");
         std::process::exit(2);
     });
     let out = Path::new(&out);
-    std::fs::create_dir_all(out).expect("create the output directory");
+    // The hello world: one UFO, one glyph per shape.
+    let one = out.join("Shapes.ufo");
+    if one.exists() {
+        std::fs::remove_dir_all(&one).expect("remove the old UFO");
+    }
+    let font = single();
+    font.save(&one).expect("write the UFO");
+    println!("{} glyphs -> {}", font.default_layer().len(), one.display());
+
+    // The family: Regular and Bold in eight sizes, for the bolden demo.
+    let out = out.join("ShapesFamily");
+    std::fs::create_dir_all(&out).expect("create the output directory");
     for (style, w) in [("Regular", 0.0), ("Bold", BOLD)] {
         let path = out.join(format!("Shapes-{style}.ufo"));
         if path.exists() {

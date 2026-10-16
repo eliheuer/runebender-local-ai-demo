@@ -11,7 +11,7 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 PROMPT=${1:?usage: draw.sh "<sentence>" [glyph] [model-dir]}
 GLYPH=${2:-octagon}
 MODEL=${3:-$ROOT/models/shapes-draw}
-UFO=$ROOT/fonts/Shapes/Shapes-Regular.ufo
+UFO=$ROOT/fonts/Shapes.ufo
 
 font-ml run draw --model "$MODEL" --source "$UFO" --glyph "$GLYPH" --prompt "$PROMPT" --write
 runebender proof "$UFO" --layer com.runebender.proposal.draw --glyphs "$GLYPH" --out "$ROOT/draw.svg" > /dev/null

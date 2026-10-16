@@ -61,23 +61,23 @@ The editor looks for models in `~/.runebender/models`. To point it at
 this repo instead, run it with `RUNEBENDER_MODELS` set:
 
 ```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes/Shapes.designspace
+RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes.ufo
 ```
 
 ## Fonts
 
-- `fonts/Shapes`: a family of geometric shapes in Regular and Bold,
-  written by `tools/make-shapes`. Every glyph has the same points in
-  both masters, which is what a bolden model trains on. Two shapes,
-  octagon and chevron, exist in Regular only. Those are the ones you
-  bolden with the model you train. Demo 01 trains on the Regular
-  master alone.
+- `fonts/Shapes.ufo`: 16 geometric shapes, one glyph each. Demo 01
+  trains on this.
+- `fonts/ShapesFamily`: the same shapes in 8 sizes, as Regular and
+  Bold masters with the same points in both, which is what a bolden
+  model trains on. Two shapes, octagon and chevron, exist in Regular
+  only. Those are the ones you bolden in demo 02.
 - `fonts/VirtuaGrotesk`: Regular and Bold of a real typeface, for demo 05.
 
 To regenerate Shapes after changing the generator:
 
 ```sh
-cd tools/make-shapes && cargo run --release -- ../../fonts/Shapes
+cd tools/make-shapes && cargo run --release -- ../../fonts
 ```
 
 ## Reset

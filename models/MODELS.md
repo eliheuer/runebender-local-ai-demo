@@ -5,8 +5,8 @@ except this file, `shapes-draw`, and `shapes-bolden`.
 
 | Directory | Kind | Size | Where it comes from |
 | --- | --- | --- | --- |
-| `shapes-draw` | outline, draw | 22 MB | Checked in. Trained by `01-draw-from-text/train.sh` on `fonts/Shapes`, 15000 steps, 256 dims, 6 layers |
-| `shapes-bolden` | outline, bolden | 5 MB | Checked in. Trained by `02-train-and-bolden/train.sh` on `fonts/Shapes`, 1200 steps, 128 dims, 4 layers |
+| `shapes-draw` | outline, draw | 22 MB | Checked in. Trained by `01-draw-from-text/train.sh` on `fonts/Shapes.ufo`, 15000 steps, 256 dims, 6 layers |
+| `shapes-bolden` | outline, bolden | 5 MB | Checked in. Trained by `02-train-and-bolden/train.sh` on `fonts/ShapesFamily`, 1200 steps, 128 dims, 4 layers |
 | `shapes-bolden-nodes` | outline, bolden | 5 MB | Written by `04-nodes/shapes-train.nodes.json` |
 | `qwen3-0.6b` | chat, GGUF | 805 MB | `03-chat-model/get-model.sh`, from [ggml-org/Qwen3-0.6B-GGUF](https://huggingface.co/ggml-org/Qwen3-0.6B-GGUF) |
 | `qwen3-1.7b` | chat, GGUF | 1.3 GB | `get-model.sh 1.7b`, from [ggml-org/Qwen3-1.7B-GGUF](https://huggingface.co/ggml-org/Qwen3-1.7B-GGUF) |
