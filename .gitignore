@@ -9,4 +9,4 @@ tools/make-shapes/target/
 # What a run leaves in the fonts
 fonts/**/.runebender-proposal.lock
 fonts/**/proof.svg
-*.nodes.cache
+.*.nodes.json.cache
