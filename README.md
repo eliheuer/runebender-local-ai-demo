@@ -40,7 +40,7 @@ font-ml tasks
 
 | | What you do | What you learn |
 | --- | --- | --- |
-| [01-draw-from-text](01-draw-from-text/) | Train a model on the Shapes font, then type "a circle 64 units wide" in the editor | A model is a folder you make from your own drawings, and it only knows what you drew |
+| [01-draw-from-text](01-draw-from-text/) | Train a shapes model inside the editor, then drag a box, type "star", and the model fills it | A model is a folder you make from your own drawings, and it only knows what you drew |
 | [02-train-and-bolden](02-train-and-bolden/) | Train a model on the Shapes font, then bolden a new shape in the editor | A model that moves points keeps a family interpolating |
 | [03-chat-model](03-chat-model/) | Download a small open chat model and ask it about the font | A model from Hugging Face plugs into the same folder |
 | [04-nodes](04-nodes/) | The same train and bolden steps as a graph in the Nodes tab | Workflows are files you can share and rerun |
@@ -50,19 +50,14 @@ Do them in order. 01 is the one to do if you do only one.
 
 ## Models
 
-Every model is a directory. Trained and downloaded models go in
-`models/` here, which git ignores, except `models/shapes-bolden`, a
-trained copy of the demo 02 model, and `models/shapes-draw`, the demo
-01 model, both checked in so the editor demos work even if your
-training run fails. See
-[models/MODELS.md](models/MODELS.md).
-
-The editor looks for models in `~/.runebender/models`. To point it at
-this repo instead, run it with `RUNEBENDER_MODELS` set:
-
-```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes.ufo
-```
+Every model is a directory. The editor reads them from
+`~/Runebender/models/<kind>/`, with kinds `shapes`, `bolden`, and
+`chat`, and from `<Font>.models/` beside a font. Models this repo
+downloads or trains for the other demos go in `models/` here, which
+git ignores, except `models/shapes-bolden` and `models/shapes-base`,
+checked in so the editor demos work even if a training run fails. See
+[models/MODELS.md](models/MODELS.md). To use this repo's folder as the
+model root, run the editor with `RUNEBENDER_MODELS=$PWD/models`.
 
 ## Fonts
 

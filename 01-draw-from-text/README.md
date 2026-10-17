@@ -1,19 +1,17 @@
-# 01: Draw a shape from a sentence
+# 01: The local AI shapes tool
 
-You train a small model on the shapes in a UFO, then type "draw a
-circle 64 units wide in the lower left" in the editor and the model
-draws it into the open glyph. The model knows only the shapes in the
-UFO and the words for them. Nothing is downloaded.
+You train a small model on the 16 shapes in a UFO, inside the editor.
+Then you drag a box on a glyph, type a word, and the model fills the
+box. The model knows only the shapes in the UFO and the words for
+them. Nothing is downloaded.
 
-Time: about fifteen minutes, ten of them training.
+Time: about fifteen minutes, twelve of them training.
 
 ## 1. Look at the data
 
 `fonts/Shapes.ufo` holds 16 glyphs, one shape each: circle, square,
 triangle, star, ring, arrow, and so on. The glyph name is the label:
-the glyph named `circle` teaches the word "circle". The trainer
-measures each drawing and resizes it, so the drawn size does not
-matter.
+the glyph named `circle` teaches the word "circle".
 
 ```sh
 runebender proof fonts/Shapes.ufo --out shapes.svg
@@ -23,66 +21,58 @@ To train on your own shapes, draw them in any UFO and name the glyphs.
 A name with a hyphen is two words: `five-star`. A suffix after a dot
 is ignored, so `circle.big` is another example of "circle".
 
-## 2. Train
+## 2. Train in the editor
 
 ```sh
-./01-draw-from-text/train.sh
+runebender fonts/Shapes.ufo
 ```
 
-This runs `font-ml run train-draw` and writes `models/shapes-draw`:
-three files, `config.json`, `weights.safetensors`, and `vocab.txt`.
-Open `vocab.txt` to see every word the model can read. The training
-run prints a validation loss every 500 steps; lower is better, and the
-checkpoint with the lowest value is the one kept.
+1. Open any glyph, for example `octagon`.
+2. In the toolbar, hold the shapes button and pick **Local AI shape**.
+   The right panel shows the **Local AI shapes tool** section.
+3. Choose **Quick** (about 12 minutes, rough shapes) or **Thorough**
+   (about 30 minutes, clean shapes), then click **Train from the
+   sample shapes**. The panel shows the step, the time left, and what
+   the model draws right now for three words.
+4. When it finishes, the model `shapes-base` is chosen for you.
 
-On an M4 Pro laptop the default run of 6000 steps takes about 12
-minutes and ends with a validation loss near 1.3. Shapes from that
-model are recognizable and rough. The checked-in `models/shapes-draw`
-was trained for 15000 steps, 29 minutes, to a loss of 0.51, and its
-shapes are clean. Use it if you want to skip the wait, or train longer
-yourself with `./train.sh models/shapes-draw 15000`.
+The same run from a shell is `./01-draw-from-text/train.sh`. The
+model lands in `~/Runebender/models/shapes/shapes-base`, three files:
+`config.json`, `weights.safetensors`, and `vocab.txt`.
 
-## 3. Draw in the editor
+## 3. Use the tool
 
-```sh
-RUNEBENDER_MODELS=$PWD/models runebender fonts/Shapes.ufo
-```
+1. With the tool active, drag a box on the glyph. Hold Shift for a
+   square.
+2. Type a word in the field under the box, for example `star`, and
+   press Enter.
+3. The model draws into the box as a ghost. **Enter** keeps it as one
+   undo step. **Tab** asks for another option. **Esc** drops it.
 
-1. In the left panel, open **Local AI**. Under **Model**, choose
-   `shapes-draw`.
-2. Open any glyph, for example `octagon`.
-3. Under **Shapes**, type a sentence in the **Draw** box and click
-   **Draw: this glyph**.
-4. The drawing lands in the glyph as a proposal. **Install** keeps it,
-   **Discard** drops it. Install is one undo step.
+The panel lists every word the model knows. A word it does not know
+is reported under the box.
 
-Sentences the model understands:
+## 4. Add your own shape
 
-- `draw a circle 64 units wide in the lower left`
-- `a star 300 wide in the center`
-- `hexagon 200 in the upper right`
-- `make a ring that is 160 units wide at the top`
+Draw a new shape in any glyph of the UFO, name the glyph for it, and
+click **Train from this font** with the base chosen. The run continues
+from the base: the new word takes a spare slot and the base's own
+drawings are replayed. About two minutes. The new model is saved
+beside the font in `Shapes.models/shapes/` and chosen for you.
 
-A width is rounded to the nearest 8 units. A word that is not in
-`vocab.txt` is reported in the status line and ignored.
-
-## 4. Draw from the shell
+## 5. From the shell
 
 ```sh
-./01-draw-from-text/draw.sh "a square 400 units wide in the center" octagon
+./01-draw-from-text/draw.sh star 100,100,400,400 octagon
 ```
 
 This writes the drawing into `octagon` as a proposal layer and proofs
 it to `draw.svg`. `git checkout -- fonts` removes the proposal.
 
-## 5. Judge it
+## 6. Judge it
 
-The model is tiny and trained for minutes. Shapes come out recognizable
-and rough. Longer training makes them cleaner:
-
-```sh
-./01-draw-from-text/train.sh models/shapes-draw 12000
-```
-
-Everything the model does comes from the UFO. Draw a heart, name it
-`heart`, train again, and "a heart 200 wide" works.
+The model is tiny and trained for minutes. A thorough base draws the
+sample shapes cleanly; a quick one draws them roughly; a word added in
+two minutes comes out recognizable and uneven. Longer training makes
+every one of them cleaner. Everything the model does comes from the
+UFO.

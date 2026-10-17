@@ -1,11 +1,11 @@
 # Models
 
 Every model is a directory in this folder. Git ignores the folder
-except this file, `shapes-draw`, and `shapes-bolden`.
+except this file, `shapes-base`, and `shapes-bolden`.
 
 | Directory | Kind | Size | Where it comes from |
 | --- | --- | --- | --- |
-| `shapes-draw` | outline, draw | 22 MB | Checked in. Trained by `01-draw-from-text/train.sh` on `fonts/Shapes.ufo`, 15000 steps, 256 dims, 6 layers |
+| `shapes-base` | shapes (draw, box format) | 22 MB | Checked in. Trained by `01-draw-from-text/train.sh` on `fonts/Shapes.ufo`, 15000 steps, 16 spare word slots. Copy it to `~/Runebender/models/shapes/` to skip training |
 | `shapes-bolden` | outline, bolden | 5 MB | Checked in. Trained by `02-train-and-bolden/train.sh` on `fonts/ShapesFamily`, 1200 steps, 128 dims, 4 layers |
 | `shapes-bolden-nodes` | outline, bolden | 5 MB | Written by `04-nodes/shapes-train.nodes.json` |
 | `qwen3-0.6b` | chat, GGUF | 805 MB | `03-chat-model/get-model.sh`, from [ggml-org/Qwen3-0.6B-GGUF](https://huggingface.co/ggml-org/Qwen3-0.6B-GGUF) |
