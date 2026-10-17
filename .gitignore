@@ -3,7 +3,7 @@
 models/*
 !models/MODELS.md
 !models/shapes-bolden/
-!models/shapes-draw/
+!models/shapes-base/
 # Build output of the generator
 tools/make-shapes/target/
 # What a run leaves in the fonts
