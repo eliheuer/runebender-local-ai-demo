@@ -39,4 +39,4 @@ fi
 unzip -q "$TMP/shapes-base.zip" -d "$DIR"
 rm -rf "$TMP"
 echo "verified and unpacked: $DIR/shapes-base"
-echo "Open the editor:  runebender fonts/Shapes.ufo   (pick Local AI shape in the shapes dropdown)"
+echo "Open the editor:  runebender fonts/Shapes.ufo   (pick Local AI Shapes in the shapes dropdown)"

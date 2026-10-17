@@ -28,8 +28,8 @@ runebender fonts/Shapes.ufo
 ```
 
 1. Open any glyph, for example `octagon`.
-2. In the toolbar, hold the shapes button and pick **Local AI shape**.
-   The right panel shows the **Local AI shapes tool** section.
+2. In the toolbar, hold the shapes button and pick **Local AI Shapes**.
+   The right panel shows the **Local AI Shapes** section.
 3. Choose **Quick** (about 12 minutes, rough shapes) or **Thorough**
    (about 30 minutes, clean shapes), then click **Train from the
    sample shapes**. The panel shows the step, the time left, and what
