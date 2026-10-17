@@ -1,9 +1,9 @@
 # 01: The local AI shapes tool
 
 You train a small model on the 16 shapes in a UFO, inside the editor.
-Then you drag a box on a glyph, type a word, and the model fills the
-box. The model knows only the shapes in the UFO and the words for
-them. Nothing is downloaded.
+Then you pick a shape in the panel, drag a box on a glyph, and the
+model fills the box. The model knows only the shapes in the UFO.
+Nothing is downloaded.
 
 Time: about fifteen minutes, twelve of them training.
 
@@ -44,20 +44,19 @@ from this repo's releases and checks its hash.
 
 ## 3. Use the tool
 
-1. With the tool active, drag a box on the glyph. Hold Shift for a
-   square.
-2. Type a word in the field under the box, for example `star`, and
-   press Enter.
-3. The model draws into the box as a ghost. **Enter** keeps it as one
-   undo step. **Tab** asks for another option. **Esc** drops it.
+1. In the panel, click a shape, for example `star`.
+2. Drag a box on the glyph. The model draws into the box as a ghost
+   that fills it.
+3. **Enter** keeps it as one undo step. **Tab** asks for another
+   option. **Esc** drops it. Drag a handle on the box to resize it,
+   and the shape is drawn again for the new size.
 
-The panel lists every word the model knows. A word it does not know
-is reported under the box.
+The panel lists every shape the model knows.
 
 ## 4. Add your own shape
 
 Draw a new shape in any glyph of the UFO, name the glyph for it, and
-click **Train from this font** with the base chosen. The run continues
+click **Add This Font's Shapes** with the base chosen. The run continues
 from the base: the new word takes a spare slot and the base's own
 drawings are replayed. About two minutes. The new model is saved
 beside the font in `Shapes.models/shapes/` and chosen for you.
