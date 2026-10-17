@@ -38,7 +38,9 @@ runebender fonts/Shapes.ufo
 
 The same run from a shell is `./01-draw-from-text/train.sh`. The
 model lands in `~/Runebender/models/shapes/shapes-base`, three files:
-`config.json`, `weights.safetensors`, and `vocab.txt`.
+`config.json`, `weights.safetensors`, and `vocab.txt`. To skip the
+wait, `./01-draw-from-text/get-base-model.sh` downloads the same model
+from this repo's releases and checks its hash.
 
 ## 3. Use the tool
 

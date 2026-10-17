@@ -52,10 +52,11 @@ Do them in order. 01 is the one to do if you do only one.
 
 Every model is a directory. The editor reads them from
 `~/Runebender/models/<kind>/`, with kinds `shapes`, `bolden`, and
-`chat`, and from `<Font>.models/` beside a font. Models this repo
-downloads or trains for the other demos go in `models/` here, which
-git ignores, except `models/shapes-bolden` and `models/shapes-base`,
-checked in so the editor demos work even if a training run fails. See
+`chat`, and from `<Font>.models/` beside a font. No model weights are in
+git. The shapes base comes from this repo's releases through
+`01-draw-from-text/get-base-model.sh`, with a checksum, so the editor
+demo works even if a training run fails; the others are trained by
+scripts here or downloaded from Hugging Face. See
 [models/MODELS.md](models/MODELS.md). To use this repo's folder as the
 model root, run the editor with `RUNEBENDER_MODELS=$PWD/models`.
 

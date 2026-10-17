@@ -42,8 +42,8 @@ the error from moving every point by the average offset. The model
 should beat the baseline on most glyphs. A model that cannot beat a
 constant has not learned anything.
 
-A copy of this model is checked in, so if the run fails you can still
-do step 3.
+The run takes about a minute, so if it fails, run it again; nothing
+is checked in.
 
 ## 3. Use it in the editor
 

@@ -1,16 +1,74 @@
 {
   "version": 1,
   "nodes": [
-    { "id": 1, "type": "core.source", "pos": [32, 128] },
-    { "id": 2, "type": "core.model", "pos": [32, 256], "values": { "name": "shapes-draw" } },
-    { "id": 3, "type": "font-ml.draw", "pos": [320, 160],
-      "values": { "glyph": "octagon", "prompt": "a star 300 units wide in the center" } },
-    { "id": 4, "type": "core.proof", "pos": [608, 160], "values": { "out": "draw-proof.svg" } }
+    {
+      "id": 1,
+      "type": "core.source",
+      "pos": [
+        32,
+        128
+      ]
+    },
+    {
+      "id": 2,
+      "type": "core.model",
+      "pos": [
+        32,
+        256
+      ],
+      "values": {
+        "name": "shapes-base"
+      }
+    },
+    {
+      "id": 3,
+      "type": "font-ml.draw",
+      "pos": [
+        320,
+        160
+      ],
+      "values": {
+        "glyph": "octagon",
+        "prompt": "star",
+        "box": "100,100,400,400"
+      }
+    },
+    {
+      "id": 4,
+      "type": "core.proof",
+      "pos": [
+        608,
+        160
+      ],
+      "values": {
+        "out": "draw-proof.svg"
+      }
+    }
   ],
   "links": [
-    [1, "source", 3, "source"],
-    [2, "model", 3, "model"],
-    [1, "source", 4, "source"],
-    [3, "layer", 4, "layer"]
+    [
+      1,
+      "source",
+      3,
+      "source"
+    ],
+    [
+      2,
+      "model",
+      3,
+      "model"
+    ],
+    [
+      1,
+      "source",
+      4,
+      "source"
+    ],
+    [
+      3,
+      "layer",
+      4,
+      "layer"
+    ]
   ]
 }

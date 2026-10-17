@@ -26,7 +26,7 @@ fifteen minutes of compiling and should not happen live.
 
 ## If something fails
 
-- Training fails: `models/shapes-bolden` is checked in. Use it.
+- Training fails: `01-draw-from-text/get-base-model.sh` fetches the base; demo 02 trains in a minute.
 - No model in the editor: check `RUNEBENDER_MODELS` points at `models`, and that the model directory sits directly under it.
 - `font-ml` missing: `~/.cargo/bin` is not on PATH.
 - A GPU error: add `--device cpu` to the command, or set the same in the script.
